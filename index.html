@@ -4,23 +4,40 @@
   <meta charset="UTF-8">
   <title>Test Tracking</title>
   <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="text/javascript" src="javascript.js"></script>
  </head>
  <body>
   <div id = "content">
    <div id = "search">
-    <h3>Type</h3><br>
-    Test Cases<br>
-    Test Plans<br>
-    Both<br><br>
-    <h3>Status</h3><br>
-    Complete<br>
-    Inprogress<br><br>
-    <h3>date range</h3>
-    since ____<br>
-    until ____
+    <h3>Type</h3>
+    <input type=checkbox value="Test Cases" id=typecase>Test Cases</input><br>
+    <input type=checkbox id=typeplan>Test Plans</input><br><br>
+    <h3>Status</h3>
+    <input type=checkbox id=statuscomplete>Complete</input><br>
+    <input type=checkbox id=statusinprog>Inprogress</input><br><br>
+    <h3>Date range</h3>
+    from <input class=date type="number" value = 0 id="from" ></input> days ago<br>
+    until <input class=date type="number" value = 0 id="to" ></input>  days ago<br><br>
+    <button name=submit onclick='update()'>Submit</button>
    </div>
    <div id = "results">
     Testing
+    <div class = "testPlan">
+     <h1>Test Plan Key</h1>
+     <h2>In Progress</h2>
+     <h3>Test Cases</h3>
+     test case 1 key: summary,		Complete <br>
+     test case 2 key: summary,		Complete<br>
+     test case 3 key: summary,		Complete<br>
+     test case 4 key: summary,		Inprogress<br>
+     test case 5 key: summary,		open
+    </div>
+    <div class = "testCase">
+     <h1>Test Case Key</h1>
+     <h2>In Progress</h2>
+    </div>
+
+    </div>
    </div>
   </div>
  </body>
