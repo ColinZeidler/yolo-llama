@@ -28,3 +28,17 @@ body {
 	height:98%;
 	padding:0.5em;
 }
+.testPlan {
+	margin:4px;
+	background-color:#888;
+	padding:0.5em;
+}
+.testCase {
+	margin:4px;
+	background-color:#666;
+	padding:0.5em;
+}
+
+.date {
+	width:4em;
+}
