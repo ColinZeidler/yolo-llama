@@ -6,17 +6,19 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <script type="text/javascript" src="javascript.js"></script>
  </head>
- <body>
+ <body onload='load()'>
   <div id = "content">
    <div id = "search">
     <h3>Type</h3>
-    <input type=checkbox value="Test Cases" id=typecase>Test Cases</input><br>
-    <input type=checkbox id=typeplan>Test Plans</input><br><br>
+    <input type=checkbox id=typecase checked onclick='updateType()'>Test Cases</input><br>
+    <input type=checkbox id=typeplan checked onclick='updateType()'>Test Plans</input><br><br>
     <h3>Status</h3>
-    <input type=checkbox id=statuscomplete>Complete</input><br>
-    <input type=checkbox id=statusinprog>Inprogress</input><br><br>
+    <input type=checkbox id=statusinprog>Inprogress</input><br>
+    <input type=checkbox id=statuscomplete>Test Run: Complete</input><br>
+    <input type=checkbox id=statusfail>Failed</input><br>
+    <input type=checkbox id=statuspass>Passed</input><br><br>
     <h3>Date range</h3>
-    from <input class=date type="number" value = 0 id="from" ></input> days ago<br>
+    from <input class=date type="number" value = 1 id="from" ></input> days ago<br>
     until <input class=date type="number" value = 0 id="to" ></input>  days ago<br><br>
     <button name=submit onclick='update()'>Submit</button>
    </div>
