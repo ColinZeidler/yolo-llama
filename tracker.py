@@ -29,30 +29,39 @@ elif plan == 'true':
 
 
 counter = 0
-query = query + "&("
 if complete == 'true':
+    query = query + "&("
     query = query + "status=\"Test Run: Complete\""
     counter += 1
 
 if inprog == 'true':
     if counter > 0:
         query = query + " OR "
+    if counter == 0:
+        query = query + "&("
+
     query = query + "status=\"In Progress\""
     counter += 1
 
 if fail == 'true':
     if counter > 0:
         query = query + " OR "
+    if counter == 0:
+        query = query + "&("
+
     query = query + "status=\"Test Failed\""
     counter += 1
 
 if sPass == 'true':
     if counter > 0:
         query = query + " OR "
+    if counter == 0:
+        query = query + "&("
+
     query = query + "status=\"Test: Passed\""
     counter += 1
-
-query = query + ")"
+if counter > 0:
+    query = query + ")"
 
 query = query + " order by created"
 print query
