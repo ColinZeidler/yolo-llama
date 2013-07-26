@@ -66,10 +66,10 @@ if counter > 0:
     query = query + ")"
 
 query = query + " order by updated"
-print query
-print "<br>"
+#print query
+#print "<br>"
 
-print startAt
+#print startAt
 data = {"jql": query, "startAt" : startAt}
 header = {"content-type": "application/json"}
 r = requests.post("{}".format(url), auth = (user, passw), headers = header, data = json.dumps(data))
