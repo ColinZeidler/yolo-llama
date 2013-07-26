@@ -1,5 +1,5 @@
 import sys, requests
-import urllib
+import urllib, json
 
 url = "https://magorcorp.atlassian.net/rest/api/2/search"
 user = "auto.verification"
@@ -15,6 +15,8 @@ sPass = sys.argv[6]
 
 fromdate = sys.argv[7]
 todate = sys.argv[8]
+
+startAt = sys.argv[9]
 
 
 query = "project=Verification AND created>=\"-{}d\" AND created<=\"-{}d\"".format(fromdate, todate)
@@ -67,9 +69,10 @@ query = query + " order by updated"
 print query
 print "<br>"
 
-query = urllib.quote_plus(query)
-
-r = requests.get("{}?jql={}".format(url, query), auth = (user, passw))
+print startAt
+data = {"jql": query, "startAt" : startAt}
+header = {"content-type": "application/json"}
+r = requests.post("{}".format(url), auth = (user, passw), headers = header, data = json.dumps(data))
 
 counter = 0
 for issue in r.json()['issues']:
@@ -80,14 +83,13 @@ for issue in r.json()['issues']:
     elif issue['fields']['issuetype']['name'] == 'Test Plan':
         print "<div class=testPlan>"
 
-    print "<h1>", issue['key'], counter, "</h1>"
+    print "<h1>", issue['fields']['issuetype']['name'], issue['key'], "</h1>"
     print "<h2>", issue['fields']['status']['name'], "</h2>"
-    print issue['fields']['issuetype']['name']
-    #for field in issue['fields']:
-   #     print field
-    #    print issue['fields'][field]
 #customfield_10228 = build number (for test cases, and test plans)
-    print "Build:", issue['fields']['customfield_10228'][0]
+    try:
+        print "Build:", issue['fields']['customfield_10228'][0]
+    except:
+        print "build not set"
     print "<br>"
     print "<div class=time>"
     date = issue['fields']['created'][:-12].split("T")
