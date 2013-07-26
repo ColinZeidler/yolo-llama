@@ -98,3 +98,6 @@ for issue in r.json()['issues']:
     print "Updated", update[1] + ", " +  update[0], "<br>"
     print "</div>"
     print "</div>"
+
+if counter == 0:
+    print "<h1>Nothing Loaded</h1>"
