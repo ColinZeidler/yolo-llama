@@ -93,7 +93,10 @@ for issue in r.json()['issues']:
             except:
                 classN = issue['fields']['status']['name'].split("Test ")[1]
     except:
-        classN = issue['fields']['status']['name'].split(" ")[1]
+        try:
+            classN = issue['fields']['status']['name'].split(" ")[1]
+        except:
+            classN = issue['fields']['status']['name']
     print "<h2 class={}>{}</h2>".format(classN, issue['fields']['status']['name'])
 #customfield_10228 = build number (for test cases, and test plans)
     try:

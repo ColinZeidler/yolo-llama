@@ -81,3 +81,6 @@ h2.Progress {
 h2.Failed {
 	color:red;
 }
+h2.Open {
+	color:blue;
+}
