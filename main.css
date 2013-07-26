@@ -68,3 +68,16 @@ body {
 #loadmore:active {
 	background-color:#383838;
 }
+
+h2.Complete {
+	color:green;
+}
+h2.Passed {
+	color:green;
+}
+h2.Progress {
+	color:yellow;
+}
+h2.Failed {
+	color:red;
+}

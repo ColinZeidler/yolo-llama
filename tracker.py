@@ -84,7 +84,17 @@ for issue in r.json()['issues']:
         print "<div class=testPlan>"
 
     print "<h1>", issue['fields']['issuetype']['name'], issue['key'], "</h1>"
-    print "<h2>", issue['fields']['status']['name'], "</h2>"
+    try:
+        try:
+            classN = issue['fields']['status']['name'].split("Test: ")[1]
+        except:
+            try:
+                classN = issue['fields']['status']['name'].split("Test Run: ")[1]
+            except:
+                classN = issue['fields']['status']['name'].split("Test ")[1]
+    except:
+        classN = issue['fields']['status']['name'].split(" ")[1]
+    print "<h2 class={}>{}</h2>".format(classN, issue['fields']['status']['name'])
 #customfield_10228 = build number (for test cases, and test plans)
     try:
         print "Build:", issue['fields']['customfield_10228'][0]
