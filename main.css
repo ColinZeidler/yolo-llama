@@ -70,17 +70,17 @@ body {
 }
 
 h2.Complete {
-	color:green;
+	color:#006E04;
 }
 h2.Passed {
-	color:green;
+	color:#006E04;
 }
 h2.Progress {
-	color:yellow;
+	color:#E08504;
 }
 h2.Failed {
-	color:red;
+	color:#910000;
 }
 h2.Open {
-	color:blue;
+	color:#0F8BD9;
 }
