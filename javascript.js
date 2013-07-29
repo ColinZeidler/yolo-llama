@@ -6,6 +6,7 @@
  var statuspass;
  var fromdate;
  var todate;
+ var orderBy;
 
  var phpURL;
  var counter = 50;
@@ -18,6 +19,7 @@ function load() {
  statuspass = document.getElementById('statuspass');
  fromdate = document.getElementById('from');
  todate = document.getElementById('to');
+ orderBy = document.getElementById('orderby');
 }
 function update() {
  var http_r = new XMLHttpRequest();
@@ -77,5 +79,6 @@ function loadMore(obj) {
 function genURL(start) {
  start = start || 0;
  console.info(start)
- phpURL = 'tracker.php?case=' + testcase.checked + '&plan=' + testplan.checked + '&complete=' + statuscomp.checked + '&inprog=' + statusinprog.checked + '&fail=' + statusfail.checked + '&fromdate=' + fromdate.value + '&todate=' + todate.value + "&pass=" + statuspass.checked + "&startAt=" + start;
+ phpURL = 'tracker.php?case=' + testcase.checked + '&plan=' + testplan.checked + '&complete=' + statuscomp.checked + '&inprog=' + statusinprog.checked + '&fail=' + statusfail.checked + '&fromdate=' + fromdate.value + '&todate=' + todate.value + "&pass=" + statuspass.checked + "&startAt=" + start + "&order=" + orderBy.options[orderBy.selectedIndex].value;
+alert(phpURL);
 }

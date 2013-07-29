@@ -8,7 +8,8 @@ $pass = $_GET['pass'];
 $fromdate = $_GET['fromdate'];
 $todate = $_GET['todate'];
 $startAt = $_GET['startAt'];
+$orderBy = $_GET['order'];
 
 #echo "$case $plan $complete $inprog $fail $fromdate $todate<br>";
-echo `/home/videowall/python2.7-env/bin/python2.7 tracker.py $case $plan $complete $inprog $fail $pass $fromdate $todate $startAt`;
+echo `/home/videowall/python2.7-env/bin/python2.7 tracker.py $case $plan $complete $inprog $fail $pass $fromdate $todate $startAt $orderBy`;
 ?>

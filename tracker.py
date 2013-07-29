@@ -17,7 +17,7 @@ fromdate = sys.argv[7]
 todate = sys.argv[8]
 
 startAt = sys.argv[9]
-
+orderBy = sys.argv[10]
 
 query = "project=Verification AND created>=\"-{}d\" AND created<=\"-{}d\"".format(fromdate, todate)
 
@@ -65,7 +65,7 @@ if sPass == 'true':
 if counter > 0:
     query = query + ")"
 
-query = query + " order by updated"
+query = query + " order by " + orderBy
 #print query
 #print "<br>"
 
