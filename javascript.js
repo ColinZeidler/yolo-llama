@@ -80,5 +80,4 @@ function genURL(start) {
  start = start || 0;
  console.info(start)
  phpURL = 'tracker.php?case=' + testcase.checked + '&plan=' + testplan.checked + '&complete=' + statuscomp.checked + '&inprog=' + statusinprog.checked + '&fail=' + statusfail.checked + '&fromdate=' + fromdate.value + '&todate=' + todate.value + "&pass=" + statuspass.checked + "&startAt=" + start + "&order=" + orderBy.options[orderBy.selectedIndex].value;
-alert(phpURL);
 }
