@@ -17,9 +17,14 @@
     <input type=checkbox id=statuscomplete>Test Run: Complete</input><br>
     <input type=checkbox id=statusfail>Failed</input><br>
     <input type=checkbox id=statuspass>Passed</input><br><br>
-    <h3>Date range</h3>
+    <h3>Date Range</h3>
     from <input class=date type="number" value = 1 id="from" ></input> days ago<br>
     until <input class=date type="number" value = 0 id="to" ></input>  days ago<br><br>
+    <h3>Order By</h3>
+    <select id=orderby>
+     <option value=created>Created</option>
+     <option value=updated selected>Updated</option>
+    </select><br><br>
     <button name=submit onclick='update()'>Submit</button>
    </div>
    <div id = "results">
