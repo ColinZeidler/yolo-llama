@@ -30,11 +30,12 @@ function update() {
    var resultsdiv = document.getElementById('results');
    resultsdiv.innerHTML = http_r.responseText;
    resultsdiv.innerHTML = resultsdiv.innerHTML + "<div id=loadmore onclick='loadMore(this)'><h1>Load More</h1></div>";
+   document.getElementById('loading').innerHTML = '';
   }
  }
  http_r.open('GET', phpURL, true);
  http_r.send();
-
+ document.getElementById('loading').innerHTML = "<img src=\"images/loading_spin.gif\" height=64px />";
 }
 
 function updateType() {
