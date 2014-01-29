@@ -3,7 +3,7 @@ import urllib, json
 
 url = "https://magorcorp.atlassian.net/rest/api/2/search"
 user = "auto.verification"
-passw = "video123"
+passw = ""
 
 case = sys.argv[1]
 plan = sys.argv[2]
